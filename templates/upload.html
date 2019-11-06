@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于Flask的目标检测演示</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Ojbect Detection Web System</h1>
+    <br/><br/>
+    <br /><br />
+    <br /><br />
+
+    <form action="" enctype='multipart/form-data' method='POST'>
+        <div class="centered">
+            <input type="file" name="file" style="margin-top:20px;"/>
+        </div>
+        <br>
+        <!-- <input type="text" class="txt_input" name="name"  value="保存的json的名称（eg:00001）" style="margin-top:10px;"/> -->
+        <div class="centered">
+            <input type="submit" value="上传图片到服务器" class="button-new" style="margin-top:15px;"/>
+        </div>
+    </form>
+    <script src="{{url_for('static',filename='index.js')}}"></script>
+    <script src="{{url_for('static',filename='jquery-3.2.0.min.js')}}"></script>
+</body>
+</html>

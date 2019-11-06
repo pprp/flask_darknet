@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>基于Flask的目标检测演示</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <style type="text/css">
+        /*表格样式*/
+        table {
+            width: 90%;
+            background: #ccc;
+            margin: 10px auto;
+            border-collapse: collapse;
+            /*border-collapse:collapse合并内外边距(去除表格单元格默认的2个像素内外边距*/
+        }
+    
+        th,
+        td {
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+    
+        th {
+            background: #eee;
+            font-weight: normal;
+        }
+    
+        tr {
+            background: #fff;
+        }
+    
+        tr:hover {
+            background: #cc0;
+        }
+    
+        td a {
+            color: #06f;
+            text-decoration: none;
+        }
+    
+        td a:hover {
+            color: #06f;
+            text-decoration: underline;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1>Object Detection Web System</h1>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <form action="" enctype='multipart/form-data' method='POST'>
+        <div class="centered">
+            <input type="file" name="file" style="margin-top:20px;" />
+        </div>
+        <br>
+        <!-- <input type="text" class="txt_input" name="name"  value="" style="margin-top:10px;"/> -->
+        <div class="centered">
+            <input type="submit" value="上传图片到服务器" class="button-new" style="margin-top:15px;" />
+        </div>
+    </form>
+    <!-- <h3>注意：{{userinput}}</h3> -->
+    <div class="centered">
+        <img src="{{ url_for('static', filename= './images/test.jpg',_t=val1) }}" width="400" height="400"
+            alt="图片传输出现了一些问题，请刷新后重新传输。" />
+        <!-- <img src="{{ url_for('static', filename= './images/output.jpg',_t=val1) }}" width="400" height="400"  alt="图片传输出现了一些问题，请刷新后重新传输。" /> -->
+    </div>
+    <!-- <section>
+        预测信息如下：
+
+        {% for itms in userJson %}
+        <table border="1" cellspacing=0 cellpadding=2 bordercolor=#505050>
+            <tr>
+                <th>KEY</th>
+                <th>VALUE</th>
+            </tr>
+            {% for k,v in itms.items() %}
+            <tr>
+
+                <td>
+                    <center>{{ k }}</center>
+                </td>
+                <td>
+                    <center>{{ v }}</center>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </table>
+
+        {% endfor %}
+    </section> -->
+    {{userJson}}
+    <script src="{{url_for('static',filename='index.js')}}"></script>
+    <script src="{{url_for('static',filename='jquery-3.2.0.min.js')}}"></script>
+</body>
+
+</html>
