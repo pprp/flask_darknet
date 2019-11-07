@@ -2,3 +2,10 @@ model_data/*
 model_data_bak
 yolov3.weights
 yolov3-tiny.weights
+*.json
+*.pyc
+__pycache__/*
+__pycache__/yolo_video.cpython-35.pyc
+*.pyc
+*.pyc
+__pycache__/yolo_video.cpython-36.pyc
